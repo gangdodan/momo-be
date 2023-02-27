@@ -31,8 +31,8 @@ public class SettlementTransitionService {
     private final UserRepository userRepository;
 
 
-        @Scheduled(cron = "0 0 10 1 * ?")
-//    @Scheduled(cron = "0/10 * * * * *")
+//    @Scheduled(cron = "0 0 10 1 * ?")
+    @Scheduled(cron = "0/30 * * * * *")
     @Transactional
     public void transitionOfPayment() {
         List<Settlement> settlements = settlementQueryDslRepository.findReservationForMeetingClosed();
